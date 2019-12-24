@@ -9,4 +9,4 @@ export default props => (
     </Text>
   </View>
 );
-//https://jlongster.com/A-Prettier-Formatter  
+//https://jlongster.com/A-Prettier-Formatter

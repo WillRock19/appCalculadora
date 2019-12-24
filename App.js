@@ -3,13 +3,21 @@ import Button from './src/components/Button';
 import Display from './src/components/Display';
 import { View, StyleSheet } from 'react-native';
 
+const initialState = {
+  displayValue: '0',
+  numbersToCalculate: new Array(2),
+  operation: null,
+};
+
 export default class App extends Component {
   constructor() {
     super();
-    this.state = {
-      displayValue: '0',
-    };
+    this.state = { ...initialState };
   }
+
+  addDigit = digit => {
+    this.setState({ displayValue: digit });
+  };
 
   render() {
     return (
@@ -17,23 +25,23 @@ export default class App extends Component {
         <View style={styles.container}>
           <Display value={this.state.displayValue} />
           <View style={styles.buttons}>
-            <Button label="AC" />
-            <Button label="/" />
-            <Button label="7" />
-            <Button label="8" />
-            <Button label="9" />
-            <Button label="*" />
-            <Button label="4" />
-            <Button label="5" />
-            <Button label="6" />
-            <Button label="-" />
-            <Button label="1" />
-            <Button label="2" />
-            <Button label="3" />
-            <Button label="+" />
-            <Button label="0" />
+            <Button label="AC" tripleSpace />
+            <Button label="/" operation />
+            <Button label="7" clickFunction={this.addDigit} />
+            <Button label="8" clickFunction={this.addDigit} />
+            <Button label="9" clickFunction={this.addDigit} />
+            <Button label="*" operation />
+            <Button label="4" clickFunction={this.addDigit} />
+            <Button label="5" clickFunction={this.addDigit} />
+            <Button label="6" clickFunction={this.addDigit} />
+            <Button label="-" operation />
+            <Button label="1" clickFunction={this.addDigit} />
+            <Button label="2" clickFunction={this.addDigit} />
+            <Button label="3" clickFunction={this.addDigit} />
+            <Button label="+" operation />
+            <Button label="0" doubleSpace clickFunction={this.addDigit} />
             <Button label="." />
-            <Button label="=" />
+            <Button label="=" operation />
           </View>
         </View>
       </View>
