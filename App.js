@@ -45,8 +45,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  buttons:{
+  buttons: {
     flexDirection: 'row',
-    flexWrap: 'wrap'
-  }
+    flexWrap: 'wrap',
+  },
 });
