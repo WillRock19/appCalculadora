@@ -4,7 +4,11 @@ import { View, Text } from 'react-native';
 
 export default props => (
   <View style={Styles.display}>
-    <Text style={Styles.displayValue} numberOfLines={1} ellipsizeMode={'head'}>
+    <Text
+      style={Styles.displayValue}
+      numberOfLines={1}
+      ellipsizeMode={'head'}
+      testID={'display-value'}>
       {props.value}
     </Text>
   </View>
